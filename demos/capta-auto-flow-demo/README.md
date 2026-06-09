@@ -56,6 +56,17 @@ dist/
 - Build command: `npm run build`
 - Output directory: `dist`
 
+## Deploy no GitHub Pages
+
+Esta demo tambem esta preparada para publicar como landing page pelo GitHub Pages.
+
+- Workflow: `.github/workflows/pages.yml`
+- Build executado em: `demos/capta-auto-flow-demo`
+- Pasta publicada: `demos/capta-auto-flow-demo/dist`
+- URL esperada: `https://sarrafsamir-sosuke.github.io/demo-capta-auto-flow/`
+
+No GitHub, confira em `Settings > Pages` se a origem esta configurada como `GitHub Actions`.
+
 ## Como personalizar
 
 Identidade e textos:

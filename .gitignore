@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+
+demos/**/node_modules/
+demos/**/dist/
+demos/**/vite-dev*.log
+
+npm-debug.log*
