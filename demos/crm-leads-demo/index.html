@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Demo visual de CRM para captacao de leads criada pela Capta."
+    />
+    <title>Capta CRM Leads Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacao principal">
+        <div class="brand">
+          <span class="brand-mark">C</span>
+          <div>
+            <strong>Capta CRM</strong>
+            <span>Leads Demo</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a class="nav-item active" href="#dashboard">Dashboard</a>
+          <a class="nav-item" href="#leads">Leads</a>
+          <a class="nav-item" href="#pipeline">Pipeline</a>
+          <a class="nav-item" href="#eventos">Eventos</a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span>Demo visual</span>
+          <strong>Sem backend</strong>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Painel comercial</p>
+            <h1>Captacao de leads</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="button secondary" id="followUpButton" type="button">
+              Simular follow-up
+            </button>
+            <button class="button primary" id="newLeadButton" type="button">
+              Novo lead fake
+            </button>
+          </div>
+        </header>
+
+        <section class="metrics-grid" id="dashboard" aria-label="Metricas do CRM">
+          <article class="metric-card">
+            <span>Total de leads</span>
+            <strong id="totalLeads">0</strong>
+            <small>Base demonstrativa</small>
+          </article>
+          <article class="metric-card">
+            <span>Em atendimento</span>
+            <strong id="activeLeads">0</strong>
+            <small>Demandam follow-up</small>
+          </article>
+          <article class="metric-card">
+            <span>Propostas</span>
+            <strong id="proposalLeads">0</strong>
+            <small>Negociacao aberta</small>
+          </article>
+          <article class="metric-card accent">
+            <span>Potencial</span>
+            <strong id="pipelineValue">R$ 0</strong>
+            <small>Valor simulado</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <section class="panel leads-panel" id="leads" aria-labelledby="leadsTitle">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Lista comercial</p>
+                <h2 id="leadsTitle">Leads captados</h2>
+              </div>
+              <button class="button ghost" id="clearFiltersButton" type="button">
+                Limpar filtros
+              </button>
+            </div>
+
+            <div class="filters" aria-label="Filtros de leads">
+              <label>
+                <span>Busca</span>
+                <input
+                  id="searchInput"
+                  type="search"
+                  placeholder="Nome, empresa ou interesse"
+                  autocomplete="off"
+                />
+              </label>
+              <label>
+                <span>Status</span>
+                <select id="statusFilter">
+                  <option value="all">Todos</option>
+                </select>
+              </label>
+              <label>
+                <span>Origem</span>
+                <select id="sourceFilter">
+                  <option value="all">Todas</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="table-wrap" tabindex="0">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Lead</th>
+                    <th>Origem</th>
+                    <th>Status</th>
+                    <th>Interesse</th>
+                    <th>Proximo contato</th>
+                  </tr>
+                </thead>
+                <tbody id="leadsTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="panel detail-panel" aria-labelledby="detailTitle">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Resumo do contato</p>
+                <h2 id="detailTitle">Lead selecionado</h2>
+              </div>
+            </div>
+            <div class="lead-detail" id="leadDetail"></div>
+            <div class="detail-actions">
+              <button class="button secondary" id="advanceStatusButton" type="button">
+                Avancar status
+              </button>
+              <button class="button ghost" id="proposalButton" type="button">
+                Simular proposta
+              </button>
+            </div>
+          </aside>
+        </section>
+
+        <section class="pipeline-section" id="pipeline" aria-labelledby="pipelineTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Kanban comercial</p>
+              <h2 id="pipelineTitle">Pipeline por status</h2>
+            </div>
+            <span id="lastUpdate">Atualizado agora</span>
+          </div>
+          <div class="kanban" id="kanbanBoard"></div>
+        </section>
+
+        <section class="panel events-panel" id="eventos" aria-labelledby="eventsTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Eventos simulados</p>
+              <h2 id="eventsTitle">Historico recente</h2>
+            </div>
+            <button class="button ghost" id="eventButton" type="button">
+              Gerar evento
+            </button>
+          </div>
+          <div class="event-list" id="eventList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
