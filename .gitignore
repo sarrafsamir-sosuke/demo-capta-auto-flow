@@ -2,6 +2,15 @@ node_modules/
 dist/
 .vercel/
 
+.agents/
+.github/
+demos/
+templates/
+client-projects/
+proposals/
+docs/
+README.md
+
 demos/**/node_modules/
 demos/**/dist/
 demos/**/vite-dev*.log
